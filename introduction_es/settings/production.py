@@ -35,6 +35,8 @@ DEBUG = False
 #SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
 #SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['https://mail.google.com']
 
+ALLOWED_HOSTS = ["introduction-es.herokuapp.com",]
+
 try:
     from .local import *
 except ImportError:

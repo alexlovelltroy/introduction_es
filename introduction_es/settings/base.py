@@ -156,7 +156,7 @@ INSTALLED_APPS = (
     'djfrontend.skeleton',
     'foundation',
     'social.apps.django_app.default',
-    'south',
+    #'south',
     'storages',
     'taggit',
 

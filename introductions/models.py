@@ -250,4 +250,4 @@ def process_message(sender, message, **args):
             print "Created an introduction from %s on intro: %s" % (message.from_header, intro.pk)
         else:
             print  "Ignore introduction"
-s
+

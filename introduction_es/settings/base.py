@@ -264,7 +264,7 @@ LOGGING = {
     },
     # you can also shortcut 'loggers' and just configure logging for EVERYTHING at once
     'root': {
-        'handlers': ['file', 'console', 'mail_admins'],
+        'handlers': ['console', 'mail_admins'],
         'level': 'DEBUG',
         'propagate': True
     },

@@ -230,14 +230,14 @@ LOGGING = {
             'formatter': 'simple'
         },
         # I always add this handler to facilitate separating loggings
-        'file': {
-            'level': 'DEBUG',
-            'filters': ['require_debug_false'],
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(PATH_LOG, 'app.log'),
-            'maxBytes': '16777216', # 16megabytes
-            'formatter': 'verbose'
-        },
+        #'file': {
+            #'level': 'DEBUG',
+            #'filters': ['require_debug_false'],
+            #'class': 'logging.handlers.RotatingFileHandler',
+            #'filename': os.path.join(PATH_LOG, 'app.log'),
+            #'maxBytes': '16777216', # 16megabytes
+            #'formatter': 'verbose'
+        #},
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
@@ -256,11 +256,11 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': False,
         },
-        'core': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True
-        }
+        #'core': {
+            #'handlers': ['file'],
+            #'level': 'DEBUG',
+            #'propagate': True
+        #}
     },
     # you can also shortcut 'loggers' and just configure logging for EVERYTHING at once
     'root': {

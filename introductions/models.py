@@ -2,6 +2,8 @@ import random
 import string
 
 from django.conf import settings
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.dispatch import receiver
 
@@ -130,7 +132,7 @@ class ShortCode(models.Model):
     content_type =  models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
-    
+
     def __unicode__(self):
         return self.alias
 
@@ -171,13 +173,13 @@ def process_message_as_follow_up(message):
             intro = Introduction.objects.get(mailbox_message__in=messages)
             if intro:
                 break
-            
-    
+
+
     if not intro:
         # This will raise a DoesNotExist message
         shortcode = ShortCode.objects.get(alias=email_alias)
         if isinstance(shortcode, Introduction):
-            intro = shortcode 
+            intro = shortcode
         else:
             raise Introduction.DoesNotExist("%s does not appear to represent an existing introduction. Message: %s" % (delivered_to, message.pk))
     # If the sender is the user that owns the intro, add it as a comment
@@ -207,7 +209,7 @@ def process_message_as_new_intro(message):
         raise Introduction.DoesNotExist("from address: %s doesn't represent a person in our system.  Message: %s" % (from_addr, message.pk))
     if not person:
         return
-        
+
     intro = Introduction(person=person,
                         from_addr=from_addr,
                         delivered_to = delivered_to,
@@ -218,7 +220,7 @@ def process_message_as_new_intro(message):
                         mailbox_message = message
                         )
     intro.save()
-    
+
     #save the shortcode
     shortcode = ShortCode(content_object=intro)
     shortcode.save()

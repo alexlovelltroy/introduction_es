@@ -4,7 +4,7 @@
 import os
 import sys
 import dj_database_url
-from boto.s3.connection import SubdomainCallingFormat
+from boto.s3.connection import OrdinaryCallingFormat
 
 import  django.conf.global_settings as DEFAULT_SETTINGS
 
@@ -30,7 +30,7 @@ AWS_SES_REGION_NAME = os.environ.get("AWS_SES_REGION_NAME", "us-east-1")
 AWS_SES_REGION_ENDPOINT = os.environ.get("AWS_SES_REGION_ENDPOINT", "email.%s.amazonaws.com" % AWS_SES_REGION_NAME)
 AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", "")
 AWS_CALLING_FORMAT = os.environ.get("AWS_CALLING_FORMAT", "")
-AWS_S3_CALLING_FORMAT = SubdomainCallingFormat()
+AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
 
 #DATABASES = {
 #    'default': {

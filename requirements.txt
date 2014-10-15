@@ -1,0 +1,25 @@
+Django
+South
+boto
+django-avatar
+django-classy-mail
+django-compressor
+django-debug-toolbar
+django-frontend-skeleton
+django-mailbox
+django-ses
+django-storages
+django-taggit
+django-telemetry
+django-zurb-foundation
+email_reply_parser
+gunicorn
+markdown
+# For dev we can use SQLLite.  Uncomment the one you really want for production
+#mysql-python
+#psycopg2
+python-social-auth
+pyzmail
+sphinx
+dj-database-url
+

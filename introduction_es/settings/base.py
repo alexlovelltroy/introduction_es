@@ -24,6 +24,7 @@ MANAGERS = ADMINS
 
 # Use environment variables for cool stuff, or hardcode them if that's more your style
 
+DJFRONTEND_STATIC_URL = ("http://s3.introduction.es/")
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID", False)
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY", False)
 AWS_SES_REGION_NAME = os.environ.get("AWS_SES_REGION_NAME", "us-east-1")

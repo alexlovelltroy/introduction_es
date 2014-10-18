@@ -157,6 +157,7 @@ INSTALLED_APPS = (
     'djcelery',
     'djfrontend',
     'djfrontend.skeleton',
+    'eagle_design',
     'foundation',
     'social.apps.django_app.default',
     #'south',
